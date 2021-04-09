@@ -200,13 +200,14 @@
       const elem_his = document.getElementById("tb-history");
       document.getElementById("tb-history").onclick = () => toggleSidebar();
 
+      // Javascript keycode e.g. keycode for 'a' is 65. See [Keycode](https://keycode.info/)
       const shortcuts = [
         {
-          keys: [37, 40],
+          keys: [37, 40, 75],
           fun: () => httpgdViewer.navPrevious()
         },
         {
-          keys: [39, 38],
+          keys: [39, 38, 74],
           fun: () => httpgdViewer.navNext()
         },
         {
