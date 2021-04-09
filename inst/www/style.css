@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #282C34;
 }
 
 #container {
@@ -74,10 +75,11 @@ body {
 }
 
 .history-item:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px 0 #424758;
 }
 
 #toolbar {
+    visibility: hidden;
     float: left;
     position: absolute;
     right: 0;
