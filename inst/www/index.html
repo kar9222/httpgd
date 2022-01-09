@@ -200,55 +200,59 @@
       const elem_his = document.getElementById("tb-history");
       document.getElementById("tb-history").onclick = () => toggleSidebar();
 
-      // Javascript keycode e.g. keycode for 'a' is 65. See [Keycode](https://keycode.info/)
+      // Javascript keycode e.g. keycode for 'a' is 65. See [Keycode](https://keycode.info/). Example:
+      // {
+      //   altKey: true,  // Use alt key. Simply remove it if alt key isn't needed
+      //   keys: [68],    // The key alone is `d`. Combined key is m-d
+      //   fun: () => httpgdViewer.navClear()
+      // },
       const shortcuts = [
         {
-          keys: [37, 40, 75],
+          keys: [37, 40, 75],  // left, down, k
           fun: () => httpgdViewer.navPrevious()
         },
         {
-          keys: [39, 38, 74],
+          keys: [39, 38, 74],  // right, up, j
           fun: () => httpgdViewer.navNext()
         },
         {
-          keys: [78],
+          keys: [78],  // n
           fun: () => httpgdViewer.navNewest()
         },
         {
-          keys: [187],
+          keys: [187],  // =
           fun: () => httpgdViewer.zoomIn()
         },
         {
-          keys: [189],
+          keys: [189],  // -
           fun: () => httpgdViewer.zoomOut()
         },
         {
-          altKey: true,
-          keys: [68],
+          altKey: true, keys: [89],  // m-x but AHKREMAP to c-d due to c-d is already mapped for browser
           fun: () => httpgdViewer.navClear()
         },
         {
-          keys: [46, 68],
+          keys: [46, 68],  // delete, d
           fun: () => httpgdViewer.navRemove()
         },
         {
-          keys: [83],
+          keys: [83],  // s
           fun: () => httpgdViewer.downloadPlotSVG(document.getElementById("drawing"))
         },
         {
-          keys: [80],
+          keys: [80],  // p
           fun: () => httpgdViewer.downloadPlotPNG(document.getElementById("drawing"))
         },
         {
-          keys: [48],
+          keys: [48],  // 0
           fun: () => httpgdViewer.zoomReset()
         },
         {
-          keys: [67],
+          keys: [67],  // c
           fun: () => httpgdViewer.copyPlotPNG(document.getElementById("drawing"))
         },
         {
-          keys: [72],
+          keys: [72],  // h
           fun: () => toggleSidebar()
         }
       ];
