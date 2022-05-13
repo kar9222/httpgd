@@ -68,71 +68,77 @@ export class HttpgdViewer {
             this.exportView.initRenderers();
         });
 
+        // Javascript keycode e.g. keycode for 'a' is 65. See [Keycode](https://keycode.info/). Example:
+        // {
+        // altKey: true,  // Use alt key. Simply remove it if alt key isn't needed
+        // keys: [68],    // The key alone is `d`. Combined key is m-d
+        // f: () => this.plotView.clearPlots(),
+        // },
         this.plotView.toolbar.registerActions([
             {
-                keys: [37, 40],
+                keys: [37, 40, 75],  // left, down, k
                 f: () => this.plotView.prevPage(),
                 id: "tb-left",
             },
             {
-                keys: [39, 38],
+                keys: [39, 38, 74],  // right, up, j
                 f: () => this.plotView.nextPage(),
                 id: "tb-right",
             },
             {
-                keys: [78],
+                keys: [78],  // n
                 f: () => this.plotView.newestPage(),
                 id: "tb-pnum",
             },
             {
-                keys: [187],
+                keys: [187],  // =
                 f: () => this.plotView.zoomIn(),
                 id: "tb-plus",
             },
             {
-                keys: [189],
+                keys: [189],  // -
                 f: () => this.plotView.zoomOut(),
                 id: "tb-minus",
             },
             {
-                keys: [48],
+                keys: [48],  // 0
                 f: () => this.plotView.zoomReset(),
                 id: "tb-zlvl",
             },
             {
                 id: "tb-clear",
                 altKey: true,
-                keys: [68],
+                keys: [89],  // m-x but AHKREMAP to c-d due to c-d is already mapped for browser
                 f: () => this.plotView.clearPlots(),
             },
             {
                 id: "tb-remove",
-                keys: [46, 68],
+                keys: [46, 68],  // delete, d
                 f: () => this.plotView.removePlot(),
             },
             {
                 id: "tb-save-svg",
-                keys: [83],
+                keys: [83],  // s
                 f: () => this.plotView.downloadSVG(),
             },
             {
                 id: "tb-save-png",
-                keys: [80],
+                keys: [80],  // p
                 f: () => this.plotView.downloadPNG(),
             },
             {
                 id: "tb-copy-png",
-                keys: [67],
+                keys: [67],  // c
                 f: () => this.plotView.copyPNG(),
             },
             {
                 id: "tb-history",
-                keys: [72],
+                keys: [72],  // h
                 f: () => this.plotView.sidebar.toggle(),
             },
             {
                 id: "tb-export",
-                keys: [69],
+                keys: [69],  // e
                 f: () => this.exportView.show(),
             },
         ]);
