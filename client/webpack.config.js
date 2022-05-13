@@ -11,7 +11,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: './src/index.ejs',
-            favicon: './src/assets/favicon.ico',
+            // favicon: './src/assets/favicon.ico',  // CUSTOM NOTE Remove "extra line" that gets appended to head element of inst/www/index.html. That "extra line" is `<link rel="icon" href="favicon.ico">`
             minify: 'auto',
         }),
     ],
