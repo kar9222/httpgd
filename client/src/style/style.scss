@@ -11,6 +11,7 @@ $default-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12
 
 body {
     margin: 0;
+    background: #282C34;
 }
 
 #container {
@@ -71,7 +72,7 @@ body {
     top: 0;
     right: 0;
     transition: right $ttime;
-    background-color: rgb(252, 252, 252);
+    background-color: #282C34;
 }
 
 .history.nohist {
@@ -85,7 +86,7 @@ body {
     margin: 8;
     cursor: pointer;
     position: relative;
-    background-color: rgb(255, 255, 255);
+    background-color: #282C34;
 
     img {
         width: 100%;
@@ -108,7 +109,7 @@ body {
     }
 
     &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        outline: rgba(281, 200, 200, 0.6) solid 3px;
         a {
             display: inline;
         }
@@ -116,12 +117,13 @@ body {
 }
 
 .history-selected {
-    outline: rgba(0, 119, 204, 0.3) solid 3px;
+    box-shadow:0 8px 16px 0 rgba(255,200,200, .6)
 }
 
 // toolbar
 
 #toolbar {
+    visibility: hidden;
     float: left;
     position: absolute;
     right: 0;
