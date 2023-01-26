@@ -20,7 +20,9 @@ Get a list of available renderers.
 This function will only work after starting a device with \code{\link[=hgd]{hgd()}}.
 }
 \examples{
+hgd()
 
 hgd_renderers()
 
+dev.off()
 }
