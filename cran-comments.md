@@ -47,18 +47,42 @@ I have included the missing header.
 These have been fixed.
 
 
-## New ´sprintf´ warning using R devel (2023-01-06 r83576)
+## Comments from CRAN at last submission
 
->checking compiled code ... WARNING
->  File ‘httpgd/libs/httpgd.so’:
->    Found ‘__sprintf_chk’, possibly from ‘sprintf’ (C)
->      Object: ‘HttpgdWebServer.o’
->  
->  Compiled code should not call entry points which might terminate R nor
->  write to stdout/stderr instead of to the console, nor use Fortran I/O
->  nor system RNGs nor [v]sprintf.
->  
->  See ‘Writing portable packages’ in the ‘Writing R Extensions’ manual.
+> Please add \value to .Rd files regarding exported methods and explain
+> the functions results in the documentation. Please write about the
+> structure of the output (class) and also what the output means. (If a
+> function does not return a value, please document that too, e.g.
+> \value{No return value, called for side effects} or similar)
+> Missing Rd-tags:
+>       hgd_test_pattern.Rd:  \value
 
-The included code does not have any occurrence of sprintf so I assume
-this is pulled in by a dependency.
+\value field has been added.
+
+> \dontrun{} should only be used if the example really cannot be executed
+> (e.g. because of missing additional software, missing API keys, ...) by
+> the user. That's why wrapping examples in \dontrun{} adds the comment
+> ("# Not run:") as a warning for the user.
+> Does not seem necessary.
+> Please unwrap the examples if they are executable in < 5 sec, or replace
+> \dontrun{} with \donttest{}.
+
+All occurrences of \dontrun have been replaced.
+
+> Please ensure that your functions do not write by default or in your
+> examples/vignettes/tests in the user's home filespace (including the
+> package directory and getwd()). This is not allowed by CRAN policies.
+> Please omit any default path in writing functions. In your
+> examples/vignettes/tests you can write to tempdir().
+
+To our knowledge no function writes any file in the user's home directory.
+Please let us know if you have observed this behaviour.
+
+> Please always make sure to reset to user's options(), working directory
+> or par() after you changed it in examples and vignettes and demos.
+> e.g.:
+> oldpar <- par(mfrow = c(1,2))
+> ...
+> par(oldpar)
+
+We do not have any occurence of par() in examples and vignettes and demos.
