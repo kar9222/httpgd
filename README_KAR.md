@@ -1,3 +1,3 @@
 # Usage
 
-See `Makefile`
+To install, use `Makefile`
