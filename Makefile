@@ -15,4 +15,4 @@ npm_build_bundle:
 
 .PHONY: install
 install:
-	R -q -e 'devtools::install("~/libs/httpgd")'
+	R -q -e 'devtools::install("~/libs/httpgd", upgrade = "never")'
