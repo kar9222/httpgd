@@ -11,7 +11,7 @@ $default-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12
 
 body {
     margin: 0;
-    background: #282C34;
+    background: #212121;
 }
 
 #container {
@@ -72,7 +72,7 @@ body {
     top: 0;
     right: 0;
     transition: right $ttime;
-    background-color: #282C34;
+    background-color: #212121;
 }
 
 .history.nohist {
@@ -86,7 +86,7 @@ body {
     margin: 8;
     cursor: pointer;
     position: relative;
-    background-color: #282C34;
+    background-color: #212121;
 
     img {
         width: 100%;
